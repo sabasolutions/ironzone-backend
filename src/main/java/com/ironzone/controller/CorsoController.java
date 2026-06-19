@@ -21,28 +21,28 @@ class CorsoController {
 
     @GetMapping
     public ResponseEntity<List<CorsoResponse>> getTutti() {
-        return ResponseEntity.ok(corsoService.getTutti());
+        return ResponseEntity.ok(corsoService.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CorsoResponse> getPerId(@PathVariable Long id) {
-        return ResponseEntity.ok(corsoService.getPerId(id));
+    public ResponseEntity<CorsoResponse> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(corsoService.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<CorsoResponse> crea(@RequestBody CorsoRequest richiesta) {
-        return ResponseEntity.ok(corsoService.crea(richiesta));
+    public ResponseEntity<CorsoResponse> create(@RequestBody CorsoRequest richiesta) {
+        return ResponseEntity.ok(corsoService.create(richiesta));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CorsoResponse> modifica(
+    public ResponseEntity<CorsoResponse> update(
             @PathVariable Long id, @RequestBody CorsoRequest richiesta) {
-        return ResponseEntity.ok(corsoService.modifica(id, richiesta));
+        return ResponseEntity.ok(corsoService.update(id, richiesta));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> elimina(@PathVariable Long id) {
-        corsoService.elimina(id);
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        corsoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

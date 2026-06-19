@@ -22,37 +22,37 @@ class IscrittoController {
     // GET /api/iscritti → tutti gli iscritti
     // GET /api/iscritti?cerca=mario → cerca per nome
     @GetMapping
-    public ResponseEntity<List<IscrittoResponse>> getTutti(
-            @RequestParam(required = false) String cerca) {
-        if (cerca != null && !cerca.isBlank()) {
-            return ResponseEntity.ok(iscrittoService.cerca(cerca));
+    public ResponseEntity<List<IscrittoResponse>> getAll(
+            @RequestParam(required = false) String search) {
+        if (search != null && !search.isBlank()) {
+            return ResponseEntity.ok(iscrittoService.find(search));
         }
-        return ResponseEntity.ok(iscrittoService.getTutti());
+        return ResponseEntity.ok(iscrittoService.getAll());
     }
 
     // GET /api/iscritti/1 → iscritto con id 1
     @GetMapping("/{id}")
     public ResponseEntity<IscrittoResponse> getPerId(@PathVariable Long id) {
-        return ResponseEntity.ok(iscrittoService.getPerId(id));
+        return ResponseEntity.ok(iscrittoService.getById(id));
     }
 
     // POST /api/iscritti → crea nuovo iscritto
     @PostMapping
-    public ResponseEntity<IscrittoResponse> crea(@RequestBody IscrittoRequest richiesta) {
-        return ResponseEntity.ok(iscrittoService.crea(richiesta));
+    public ResponseEntity<IscrittoResponse> create(@RequestBody IscrittoRequest richiesta) {
+        return ResponseEntity.ok(iscrittoService.create(richiesta));
     }
 
     // PUT /api/iscritti/1 → modifica iscritto con id 1
     @PutMapping("/{id}")
-    public ResponseEntity<IscrittoResponse> modifica(
+    public ResponseEntity<IscrittoResponse> update(
             @PathVariable Long id, @RequestBody IscrittoRequest richiesta) {
-        return ResponseEntity.ok(iscrittoService.modifica(id, richiesta));
+        return ResponseEntity.ok(iscrittoService.update(id, richiesta));
     }
 
     // DELETE /api/iscritti/1 → elimina iscritto con id 1
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> elimina(@PathVariable Long id) {
-        iscrittoService.elimina(id);
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        iscrittoService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

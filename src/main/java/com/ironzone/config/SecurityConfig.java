@@ -4,8 +4,10 @@ import com.ironzone.repository.UtenteRepository;
 import com.ironzone.security.JwtFilter;
 import com.ironzone.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -35,6 +37,10 @@ public class SecurityConfig {
 
     private final UtenteRepository utenteRepository;
     private final JwtUtil jwtUtil;
+
+    @Value("${cors.allowed-origins}")
+    private String allowedOriginsRaw;
+
 
     // Carica l'utente dal DB dato lo username
     @Bean
@@ -86,14 +92,14 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
             // Definisce chi può accedere a cosa
-            .authorizeHttpRequests(auth -> auth
-                // Queste rotte sono pubbliche (no login richiesto)
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/h2-console/**").permitAll()
-                // Tutto il resto richiede autenticazione
-                .anyRequest().authenticated()
-            )
-
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/corsi").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/contatti").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
+                        .anyRequest().authenticated()
+                )
             // Usa sessioni stateless (nessuna sessione server-side, solo JWT)
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -110,12 +116,14 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // Configurazione CORS: permette richieste da Angular (localhost:4200)
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:4200"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+
+        // Splitta la stringa in lista
+        List<String> origins = List.of(allowedOriginsRaw.split(","));
+        config.setAllowedOrigins(origins);
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 

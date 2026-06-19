@@ -25,21 +25,21 @@ public class IscrittoService {
     private final IscrittoRepository iscrittoRepo;
 
     // Restituisce tutti gli iscritti
-    public List<IscrittoResponse> getTutti() {
+    public List<IscrittoResponse> getAll() {
         return iscrittoRepo.findAll().stream()
                 .map(this::convertiInResponse)
                 .collect(Collectors.toList());
     }
 
     // Cerca iscritto per ID
-    public IscrittoResponse getPerId(Long id) {
+    public IscrittoResponse getById(Long id) {
         Iscritto iscritto = iscrittoRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Iscritto non trovato con id: " + id));
         return convertiInResponse(iscritto);
     }
 
     // Crea nuovo iscritto
-    public IscrittoResponse crea(IscrittoRequest richiesta) {
+    public IscrittoResponse create(IscrittoRequest richiesta) {
         if (iscrittoRepo.findByEmail(richiesta.getEmail()).isPresent()) {
             throw new RuntimeException("Email già registrata: " + richiesta.getEmail());
         }
@@ -57,7 +57,7 @@ public class IscrittoService {
     }
 
     // Modifica iscritto esistente
-    public IscrittoResponse modifica(Long id, IscrittoRequest richiesta) {
+    public IscrittoResponse update(Long id, IscrittoRequest richiesta) {
         Iscritto iscritto = iscrittoRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Iscritto non trovato con id: " + id));
 
@@ -72,7 +72,7 @@ public class IscrittoService {
     }
 
     // Elimina iscritto
-    public void elimina(Long id) {
+    public void delete(Long id) {
         if (!iscrittoRepo.existsById(id)) {
             throw new RuntimeException("Iscritto non trovato con id: " + id);
         }
@@ -80,7 +80,7 @@ public class IscrittoService {
     }
 
     // Cerca iscritti per nome o cognome
-    public List<IscrittoResponse> cerca(String testo) {
+    public List<IscrittoResponse> find(String testo) {
         return iscrittoRepo
                 .findByNomeContainingIgnoreCaseOrCognomeContainingIgnoreCase(testo, testo)
                 .stream()

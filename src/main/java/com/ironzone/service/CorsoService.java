@@ -18,46 +18,46 @@ public class CorsoService {
     private final CorsoRepository corsoRepo;
     private final PrenotazioneRepository prenotazioneRepo;
 
-    public List<CorsoResponse> getTutti() {
+    public List<CorsoResponse> getAll() {
         return corsoRepo.findAll().stream()
                 .map(this::convertiInResponse)
                 .collect(Collectors.toList());
     }
 
-    public CorsoResponse getPerId(Long id) {
+    public CorsoResponse findById(Long id) {
         Corso corso = corsoRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Corso non trovato"));
         return convertiInResponse(corso);
     }
 
-    public CorsoResponse crea(CorsoRequest richiesta) {
+    public CorsoResponse create(CorsoRequest request) {
         Corso corso = new Corso();
-        corso.setNome(richiesta.getNome());
-        corso.setDescrizione(richiesta.getDescrizione());
-        corso.setTrainer(richiesta.getTrainer());
-        corso.setGiorno(richiesta.getGiorno());
-        corso.setOrario(richiesta.getOrario());
-        corso.setDurata(richiesta.getDurata());
-        corso.setPostiDisponibili(richiesta.getPostiDisponibili());
-        corso.setStato(richiesta.getStato() != null ? richiesta.getStato() : "ATTIVO");
+        corso.setNome(request.getNome());
+        corso.setDescrizione(request.getDescrizione());
+        corso.setTrainer(request.getTrainer());
+        corso.setGiorno(request.getGiorno());
+        corso.setOrario(request.getOrario());
+        corso.setDurata(request.getDurata());
+        corso.setPostiDisponibili(request.getPostiDisponibili());
+        corso.setStato(request.getStato() != null ? request.getStato() : "ATTIVO");
         return convertiInResponse(corsoRepo.save(corso));
     }
 
-    public CorsoResponse modifica(Long id, CorsoRequest richiesta) {
+    public CorsoResponse update(Long id, CorsoRequest request) {
         Corso corso = corsoRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Corso non trovato"));
-        corso.setNome(richiesta.getNome());
-        corso.setDescrizione(richiesta.getDescrizione());
-        corso.setTrainer(richiesta.getTrainer());
-        corso.setGiorno(richiesta.getGiorno());
-        corso.setOrario(richiesta.getOrario());
-        corso.setDurata(richiesta.getDurata());
-        corso.setPostiDisponibili(richiesta.getPostiDisponibili());
-        if (richiesta.getStato() != null) corso.setStato(richiesta.getStato());
+        corso.setNome(request.getNome());
+        corso.setDescrizione(request.getDescrizione());
+        corso.setTrainer(request.getTrainer());
+        corso.setGiorno(request.getGiorno());
+        corso.setOrario(request.getOrario());
+        corso.setDurata(request.getDurata());
+        corso.setPostiDisponibili(request.getPostiDisponibili());
+        if (request.getStato() != null) corso.setStato(request.getStato());
         return convertiInResponse(corsoRepo.save(corso));
     }
 
-    public void elimina(Long id) {
+    public void delete(Long id) {
         corsoRepo.deleteById(id);
     }
 

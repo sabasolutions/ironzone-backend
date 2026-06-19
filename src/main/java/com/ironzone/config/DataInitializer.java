@@ -14,7 +14,7 @@ import java.time.LocalTime;
 // =============================================
 // DATA INITIALIZER
 // Popola il database con dati di esempio all'avvio
-// Utile per sviluppo e demo
+// Utile per sviluppo e demo, commentare @Component per disabilitare
 // =============================================
 @Component
 @RequiredArgsConstructor

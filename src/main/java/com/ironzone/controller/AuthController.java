@@ -30,18 +30,18 @@ class AuthController {
 
     // POST /api/auth/login
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest richiesta) {
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
         // Verifica username e password
         authManager.authenticate(
-                new UsernamePasswordAuthenticationToken(richiesta.getUsername(), richiesta.getPassword())
+                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
 
         // Genera il token JWT
-        UserDetails utente = userDetailsService.loadUserByUsername(richiesta.getUsername());
+        UserDetails utente = userDetailsService.loadUserByUsername(request.getUsername());
         String token = jwtUtil.generaToken(utente.getUsername());
 
         // Prende i dati extra dell'utente dal DB
-        var utenteDb = utenteRepo.findByUsername(richiesta.getUsername()).orElseThrow();
+        var utenteDb = utenteRepo.findByUsername(request.getUsername()).orElseThrow();
 
         return ResponseEntity.ok(new LoginResponse(
                 token,
