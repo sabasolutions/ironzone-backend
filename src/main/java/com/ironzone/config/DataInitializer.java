@@ -1,7 +1,7 @@
-package com.ironzone.config;
+package com.aurea.config;
 
-import com.ironzone.entity.*;
-import com.ironzone.repository.*;
+import com.aurea.entity.*;
+import com.aurea.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,7 +16,7 @@ import java.time.LocalTime;
 // Popola il database con dati di esempio all'avvio
 // Utile per sviluppo e demo, commentare @Component per disabilitare
 // =============================================
-@Component
+// @Component  // Disabilitato
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 

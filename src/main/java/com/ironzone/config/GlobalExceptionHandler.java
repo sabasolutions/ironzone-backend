@@ -1,4 +1,4 @@
-package com.ironzone.config;
+package com.aurea.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

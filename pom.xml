@@ -11,7 +11,7 @@
     <relativePath/>
   </parent>
 
-  <groupId>com.ironzone</groupId>
+  <groupId>com.aurea</groupId>
   <artifactId>aurea-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>aurea-backend</name>

@@ -1,4 +1,4 @@
-package com.ironzone.security;
+package com.aurea.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

@@ -1,4 +1,4 @@
-package com.ironzone.dto;
+package com.aurea.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

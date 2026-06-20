@@ -1,4 +1,4 @@
-package com.ironzone.security;
+package com.aurea.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

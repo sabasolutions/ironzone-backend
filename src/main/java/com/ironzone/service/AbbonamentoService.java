@@ -1,11 +1,11 @@
-package com.ironzone.service;
+package com.aurea.service;
 
-import com.ironzone.dto.AbbonamentoRequest;
-import com.ironzone.dto.AbbonamentoResponse;
-import com.ironzone.entity.Abbonamento;
-import com.ironzone.entity.Iscritto;
-import com.ironzone.repository.AbbonamentoRepository;
-import com.ironzone.repository.IscrittoRepository;
+import com.aurea.dto.AbbonamentoRequest;
+import com.aurea.dto.AbbonamentoResponse;
+import com.aurea.entity.Abbonamento;
+import com.aurea.entity.Iscritto;
+import com.aurea.repository.AbbonamentoRepository;
+import com.aurea.repository.IscrittoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

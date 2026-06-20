@@ -1,4 +1,4 @@
-package com.ironzone.entity;
+package com.aurea.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.ironzone.repository;
+package com.aurea.repository;
 
 import com.ironzone.entity.Prenotazione;
 import org.springframework.data.jpa.repository.JpaRepository;

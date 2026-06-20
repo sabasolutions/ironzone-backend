@@ -1,8 +1,8 @@
-package com.ironzone.config;
+package com.aurea.config;
 
-import com.ironzone.repository.UtenteRepository;
-import com.ironzone.security.JwtFilter;
-import com.ironzone.security.JwtUtil;
+import com.aurea.repository.UtenteRepository;
+import com.aurea.security.JwtFilter;
+import com.aurea.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

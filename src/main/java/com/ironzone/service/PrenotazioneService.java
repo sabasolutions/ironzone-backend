@@ -1,4 +1,4 @@
-package com.ironzone.service;
+package com.aurea.service;
 
 import com.ironzone.dto.PrenotazioneRequest;
 import com.ironzone.dto.PrenotazioneResponse;
