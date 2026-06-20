@@ -11,5 +11,5 @@ target
 *.md
 
 #! Keep the built jar if present so Docker can COPY it for local image builds
-!target/ironzone-backend-0.0.1-SNAPSHOT.jar
+!target/aurea-backend-0.0.1-SNAPSHOT.jar
 

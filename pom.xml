@@ -12,10 +12,10 @@
   </parent>
 
   <groupId>com.ironzone</groupId>
-  <artifactId>ironzone-backend</artifactId>
+  <artifactId>aurea-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>ironzone-backend</name>
-  <description>IronZone Gym Management System - Backend</description>
+  <name>aurea-backend</name>
+  <description>Aurea Gym Management System - Backend (formerly IronZone)</description>
 
   <properties>
     <java.version>21</java.version>
