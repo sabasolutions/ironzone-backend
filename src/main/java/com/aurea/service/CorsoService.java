@@ -1,10 +1,10 @@
 package com.aurea.service;
 
-import com.ironzone.dto.CorsoRequest;
-import com.ironzone.dto.CorsoResponse;
-import com.ironzone.entity.Corso;
-import com.ironzone.repository.CorsoRepository;
-import com.ironzone.repository.PrenotazioneRepository;
+import com.aurea.dto.CorsoRequest;
+import com.aurea.dto.CorsoResponse;
+import com.aurea.entity.Corso;
+import com.aurea.repository.CorsoRepository;
+import com.aurea.repository.PrenotazioneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

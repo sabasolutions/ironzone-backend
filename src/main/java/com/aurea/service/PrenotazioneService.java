@@ -1,13 +1,13 @@
 package com.aurea.service;
 
-import com.ironzone.dto.PrenotazioneRequest;
-import com.ironzone.dto.PrenotazioneResponse;
-import com.ironzone.entity.Iscritto;
-import com.ironzone.entity.Corso;
-import com.ironzone.entity.Prenotazione;
-import com.ironzone.repository.IscrittoRepository;
-import com.ironzone.repository.CorsoRepository;
-import com.ironzone.repository.PrenotazioneRepository;
+import com.aurea.dto.PrenotazioneRequest;
+import com.aurea.dto.PrenotazioneResponse;
+import com.aurea.entity.Iscritto;
+import com.aurea.entity.Corso;
+import com.aurea.entity.Prenotazione;
+import com.aurea.repository.IscrittoRepository;
+import com.aurea.repository.CorsoRepository;
+import com.aurea.repository.PrenotazioneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;

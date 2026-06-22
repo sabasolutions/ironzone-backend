@@ -1,6 +1,6 @@
 package com.aurea.repository;
 
-import com.ironzone.entity.Prenotazione;
+import com.aurea.entity.Prenotazione;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

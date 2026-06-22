@@ -15,7 +15,7 @@
   <artifactId>aurea-backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>aurea-backend</name>
-  <description>Aurea Gym Management System - Backend (formerly IronZone)</description>
+  <description>Aurea Gym Management System - Backend (formerly Aurea)</description>
 
   <properties>
     <java.version>21</java.version>

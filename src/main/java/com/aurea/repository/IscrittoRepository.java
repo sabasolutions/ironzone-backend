@@ -1,6 +1,6 @@
 package com.aurea.repository;
 
-import com.ironzone.entity.Iscritto;
+import com.aurea.entity.Iscritto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

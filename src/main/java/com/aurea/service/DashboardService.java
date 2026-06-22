@@ -1,10 +1,10 @@
 package com.aurea.service;
 
-import com.ironzone.dto.DashboardResponse;
-import com.ironzone.repository.IscrittoRepository;
-import com.ironzone.repository.AbbonamentoRepository;
-import com.ironzone.repository.CorsoRepository;
-import com.ironzone.repository.PrenotazioneRepository;
+import com.aurea.dto.DashboardResponse;
+import com.aurea.repository.IscrittoRepository;
+import com.aurea.repository.AbbonamentoRepository;
+import com.aurea.repository.CorsoRepository;
+import com.aurea.repository.PrenotazioneRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

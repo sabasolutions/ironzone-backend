@@ -1,7 +1,7 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.DashboardResponse;
-import com.ironzone.service.DashboardService;
+import com.aurea.dto.DashboardResponse;
+import com.aurea.service.DashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

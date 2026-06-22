@@ -1,8 +1,8 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.IscrittoRequest;
-import com.ironzone.dto.IscrittoResponse;
-import com.ironzone.service.IscrittoService;
+import com.aurea.dto.IscrittoRequest;
+import com.aurea.dto.IscrittoResponse;
+import com.aurea.service.IscrittoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

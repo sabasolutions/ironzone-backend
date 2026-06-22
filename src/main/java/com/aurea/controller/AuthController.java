@@ -1,8 +1,8 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.LoginRequest;
-import com.ironzone.dto.LoginResponse;
-import com.ironzone.security.JwtUtil;
+import com.aurea.dto.LoginRequest;
+import com.aurea.dto.LoginResponse;
+import com.aurea.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,7 +26,7 @@ class AuthController {
     private final AuthenticationManager authManager;
     private final UserDetailsService userDetailsService;
     private final JwtUtil jwtUtil;
-    private final com.ironzone.repository.UtenteRepository utenteRepo;
+    private final com.aurea.repository.UtenteRepository utenteRepo;
 
     // POST /api/auth/login
     @PostMapping("/login")

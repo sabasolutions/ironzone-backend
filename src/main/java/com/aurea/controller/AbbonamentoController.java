@@ -1,8 +1,8 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.AbbonamentoRequest;
-import com.ironzone.dto.AbbonamentoResponse;
-import com.ironzone.service.AbbonamentoService;
+import com.aurea.dto.AbbonamentoRequest;
+import com.aurea.dto.AbbonamentoResponse;
+import com.aurea.service.AbbonamentoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

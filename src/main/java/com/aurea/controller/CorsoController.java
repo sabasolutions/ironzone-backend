@@ -1,8 +1,8 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.CorsoRequest;
-import com.ironzone.dto.CorsoResponse;
-import com.ironzone.service.CorsoService;
+import com.aurea.dto.CorsoRequest;
+import com.aurea.dto.CorsoResponse;
+import com.aurea.service.CorsoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

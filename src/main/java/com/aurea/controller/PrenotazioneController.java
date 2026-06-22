@@ -1,7 +1,7 @@
-package com.ironzone.controller;
+package com.aurea.controller;
 
-import com.ironzone.dto.*;
-import com.ironzone.service.*;
+import com.aurea.dto.*;
+import com.aurea.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
