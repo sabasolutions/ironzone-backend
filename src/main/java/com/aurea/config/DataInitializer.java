@@ -16,7 +16,7 @@ import java.time.LocalTime;
 // Popola il database con dati di esempio all'avvio
 // Utile per sviluppo e demo, commentare @Component per disabilitare
 // =============================================
-// @Component  // Disabilitato
+@Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
